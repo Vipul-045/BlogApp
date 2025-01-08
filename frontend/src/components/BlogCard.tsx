@@ -34,4 +34,4 @@ export function Avatar({ name, size = "small" }: { name: string, size: "small" |
   </div>
 }
 
-export default BlogCard
+export default BlogCard 
