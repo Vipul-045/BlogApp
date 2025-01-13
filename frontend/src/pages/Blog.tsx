@@ -1,28 +1,20 @@
-import AppBar from "../components/AppBar"
-import BlogCard from "../components/BlogCard"
-import { useBlogs } from "../hooks"
+import { useblog } from "../hooks"
+import { useParams } from "react-router-dom";
 
-export const Blogs = () => {
-    const{loading} = useBlogs();
+export const Eachblog = () => {
+    const { id } = useParams();
+    const {loading, blog} = useblog({
+        id: id || ""
+    });
 
-    if(loading){
-      return <div>loading...</div>
-    }
-
-
-  return (
-    <div>
-      <AppBar/>
-    <div className="flex justify-center">
-    <div className="max-w-xl"><BlogCard
-    authorName={"Vipul Yadav"}
-    title={"Google has Finally Dethroned ChatGPT, As you can see the latest news coming out from san fransisco"}
-    content={"They Finally Did it - When you look at what google has just achieved, it's no wonder OpneAI suddenly released Sora a few hours later to"}
-    publishedDate={"2nd Feb 2024"}
-    /></div>
+if(loading){
+    return <div>
+        loading ...done 
     </div>
-    </div>
-  )
 }
 
-export default Blogs
+return <div>
+        Blog details
+    </div>
+    
+}

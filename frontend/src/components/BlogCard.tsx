@@ -8,7 +8,7 @@ interface BlogCardProps {
 function BlogCard({
   authorName, title, content, publishedDate }: BlogCardProps) {
   return (
-    <div className="p-4 border-b border-slate-400 pb-4">
+    <div className="p-4 border-b border-slate-400 pb-4 w-screen max-w-screen-md cursor-pointer">
       <div className="flex">
         <div>
           <Avatar size="small" name={authorName} />
